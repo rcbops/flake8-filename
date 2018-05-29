@@ -16,7 +16,7 @@ The easiest way to release a new version of flake8-filename is to use make.
 
     make release-minor
 
-5. The task will stop and prompt you for you PyPI username and password if you dont have these set in your `.pypirc` file.
+5. The task will stop and prompt you for your PyPI username and password if you don't have these set in your `.pypirc` file.
 
 6. Once the task has successfully completed you need to push the tag and commit.
 

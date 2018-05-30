@@ -14,8 +14,8 @@ setup(
     version='0.0.0',
     description="A flake8 linter plug-in for validating that certain files comply with a user defined pattern.",
     long_description=readme + '\n\n' + history,
-    author="rcbops",
-    author_email='rcb-deploy@lists.rackspace.com',
+    author="rpc-automation",
+    author_email='rpc-automation@rackspace.com',
     url='https://github.com/rcbops/flake8-filename',
     entry_points={
         'flake8.extension': [
@@ -32,15 +32,17 @@ setup(
     zip_safe=False,
     keywords='flake8-filename',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Framework :: Flake8',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Topic :: Software Development :: Libraries :: Python Modules'
     ],
 )

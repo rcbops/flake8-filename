@@ -11,7 +11,7 @@ with open('HISTORY.rst') as history_file:
 
 setup(
     name='flake8-filename',
-    version='0.0.0',
+    version='1.0.0',
     description="A flake8 linter plug-in for validating that certain Python files comply with a user defined pattern.",
     long_description=readme + '\n\n' + history,
     author="rpc-automation",

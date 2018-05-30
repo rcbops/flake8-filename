@@ -2,7 +2,7 @@
 
 from flake8_filename import rules
 
-__version__ = '0.0.0'
+__version__ = '1.0.0'
 
 
 class FilenameChecker(object):

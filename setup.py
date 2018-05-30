@@ -12,14 +12,14 @@ with open('HISTORY.rst') as history_file:
 setup(
     name='flake8-filename',
     version='0.0.0',
-    description="A flake8 linter plug-in for validating that certain files comply with a user defined pattern.",
+    description="A flake8 linter plug-in for validating that certain Python files comply with a user defined pattern.",
     long_description=readme + '\n\n' + history,
     author="rpc-automation",
     author_email='rpc-automation@rackspace.com',
     url='https://github.com/rcbops/flake8-filename',
     entry_points={
         'flake8.extension': [
-            'M = flake8_filename:FilenameChecker',
+            'N = flake8_filename:FilenameChecker',
         ],
     },
     packages=['flake8_filename'],
@@ -30,7 +30,7 @@ setup(
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     license="Apache Software License 2.0",
     zip_safe=False,
-    keywords='flake8-filename',
+    keywords='flake8 flake8-filename',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Framework :: Flake8',

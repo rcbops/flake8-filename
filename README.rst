@@ -1,5 +1,5 @@
 ===============
-flake8-filename
+flake8-filename 
 ===============
 
 .. image:: https://img.shields.io/travis/rcbops/flake8-filename.svg

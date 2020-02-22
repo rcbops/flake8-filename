@@ -7,7 +7,7 @@ Location
 The flake8-filename plug-in loads its configuration options from the same source as standard flake8 configuration.
 Flake8 supports storing its configuration in the following places:
 
-Your top-level user directory In your project in one of ``setup.cfg``, ``tox.ini``, or ``.flake8``.For more information
+Your top-level user directory. In your project in one of ``setup.cfg``, ``tox.ini``, or ``.flake8``. For more information
 on configuration locations see:
 
 Flake8_configuration_
@@ -23,8 +23,12 @@ You may configure up to 50 filename validators.
 +---------------------+----------------------------------------------+-------------------------------------------------+
 | filename_regex      + any valid regex that does not contain spaces | A regex to validate filtered Python filenames   |
 +---------------------+----------------------------------------------+-------------------------------------------------+
+| filter_with_ext     + A Boolean                                    | Whether to include the file extension when      |
+|                     +                                              | filtering files. Default is to strip extension. |
++---------------------+----------------------------------------------+-------------------------------------------------+
 
-**This plug-in will automatically strip the leading path and extension for the Python files under evaluation.**
+**This plug-in will automatically strip the leading path for the Python files under evaluation, and extension, unless
+`filter_with_ext` is set.**
 
 Examples:
 =========

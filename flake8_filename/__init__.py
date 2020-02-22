@@ -45,7 +45,7 @@ class FilenameChecker(object):
                 for single_line in filename_data:
                     a = [s.strip() for s in single_line.split('=')]
                     # whitelist the acceptable params
-                    if a[0] in ['filter_regex', 'filename_regex']:
+                    if a[0] in ['filter_regex', 'filename_regex', 'filter_with_ext']:
                         parsed_params[a[0]] = a[1]
                 d[filename_check] = parsed_params
         cls.filename_checks.update(d)

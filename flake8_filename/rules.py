@@ -35,7 +35,9 @@ def rule_n5xx(filename, rule_name, rule_conf, class_type):
     code = _generate_mark_code(rule_name)
     message = "N5{} filename failed regex validation '{}'".format(code, rule_conf['filename_regex'])
 
-    sanitized_filename = splitext(basename(filename))[0]    # Strip path and extension
+    sanitized_filename = basename(filename)  # Strip path
+    if not rule_conf.get("filter_with_ext"):
+        sanitized_filename = splitext(sanitized_filename)[0]    # Strip extension
 
     if re.match(rule_conf['filter_regex'], sanitized_filename):
         if not re.match(rule_conf['filename_regex'], sanitized_filename):

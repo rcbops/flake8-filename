@@ -2,6 +2,8 @@
 flake8-filename 
 ===============
 
+**This project is currently not actively maintained**
+
 .. image:: https://img.shields.io/travis/rcbops/flake8-filename.svg
         :target: https://travis-ci.org/rcbops/flake8-filename
 

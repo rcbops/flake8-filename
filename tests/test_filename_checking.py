@@ -5,7 +5,7 @@ import pytest
 # args to only use checks that raise an 'N' prefixed error
 extra_args = ['--select', 'N']
 
-config = """
+config = r"""
 [flake8]
 filename_check1 = filter_regex=test_.+
                   filename_regex=test_[\w-]+$

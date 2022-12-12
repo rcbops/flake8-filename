@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flake8_filename import rules
+import optparse
 
 __version__ = '1.0.0'
 
@@ -16,6 +17,23 @@ class FilenameChecker(object):
     filename_checks = dict.fromkeys(["filename_check{}".format(x) for x in range(min_check, max_check)], {})
 
     @classmethod
+    def register_options(cls, parser, *args, **kwargs):
+        """Options handler to support cross compatibility.
+
+        Args:
+            parser (OptionsManager):
+        """
+        try:
+            # Flake8 3.x registration
+            parser.add_option(*args, **kwargs)
+        except (optparse.OptionError, TypeError):
+            # Flake8 2.x registration
+            parse_from_config = kwargs.pop('parse_from_config', False)
+            option = parser.add_option(*args, **kwargs)
+            if parse_from_config:
+                parser.config_options.append(option.get_opt_string().lstrip('-'))
+
+    @classmethod
     def add_options(cls, parser):
         """Required by flake8
         add the possible options, called first
@@ -26,7 +44,7 @@ class FilenameChecker(object):
         kwargs = {'action': 'store', 'default': '', 'parse_from_config': True,
                   'comma_separated_list': True}
         for num in range(cls.min_check, cls.max_check):
-            parser.add_option(None, "--filename_check{}".format(num), **kwargs)
+            cls.register_options(parser, "--filename_check{}".format(num), **kwargs)
 
     @classmethod
     def parse_options(cls, options):
